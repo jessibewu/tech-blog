@@ -109,11 +109,13 @@ main {
   color: #3486eb;
 }
 
-.delete-post-btn {
+.delete-post-btn, 
+.delete-comment-btn {
   background-color: #d41414;
 }
 
-.delete-post-btn:hover {
+.delete-post-btn:hover,
+.delete-comment-btn:hover {
   background-color: #ff643d;
 }
 
