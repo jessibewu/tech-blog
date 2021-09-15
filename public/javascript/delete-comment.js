@@ -1,18 +1,24 @@
-async function deleteFormHandler(event) {
-  event.preventDefault();
+async function deleteCommentHandler(event) {
+ event.preventDefault();
 
-  // const id = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
-  const response = await fetch(`/api/comments/${this.id}`, {
+  const comment = document.querySelector('input[name="comment"]');
+  const comment_id = comment.getAttribute('data-id');
+  const post_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+
+  console.log("comment, id");
+
+  const response = await fetch(`/api/comments/${comment_id}`, {
     method: 'DELETE'
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard/');
+    document.location.replace(`/dashboard/edit/${post_id}`);
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.delete-comment-btn').addEventListener('click', editFormHandler);
+
+document.querySelector('.delete-comment-btn').addEventListener('click', deleteCommentHandler);

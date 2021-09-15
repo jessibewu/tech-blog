@@ -5,7 +5,7 @@
       {{user.username}} on {{format_date created_at}}
     </div>
     <div class="text">
-    <input name="comment" type="text" value="{{comment_text}}" />
+    <input name="comment" type="text" data-id="{{id}}" value="{{comment_text}}" />
     <button type="submit">Edit</button>
     <button type="button" class="delete-comment-btn">Delete</button>
 
@@ -14,3 +14,4 @@
   {{/each}}
 </div>
 
+<script src="/javascript/delete-comment.js"></script>
