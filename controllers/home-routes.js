@@ -41,6 +41,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// login page 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -50,6 +51,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// signup page 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -59,7 +61,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// get single post
+// get single post by id 
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {

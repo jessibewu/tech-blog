@@ -44,6 +44,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+// edit post by id
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
@@ -70,24 +71,27 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (dbPostData) {
-        // serialize data before passing to template
-        const post = dbPostData.get({ plain: true });
-        
-        res.render('edit-post', {
-          post,
-          loggedIn: true
+  .then(dbPostData => {
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+
+    // serialize the data
+    const post = dbPostData.get({ plain: true });
+
+    res.render('edit-post', {
+        post,
+        loggedIn: true
         });
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
+// add post 
 router.get('/add-post', withAuth, (req, res) => {
   Post.findAll({
     where: {

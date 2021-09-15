@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all users
+// get all posts
 router.get('/', (req, res) => {
   console.log('======================');
   Post.findAll({
@@ -35,6 +35,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// get post by id
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -74,8 +75,9 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// add post
 router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_content: 'https://taskmaster.com/press', user_id: 1}
+  // expects {title: 'tech blog goes public!', post_content: 'XXXXX', user_id: 1}
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
@@ -88,10 +90,12 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+// update post by id
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: req.body.title,
+      post_content: req.body.post_content
     },
     {
       where: {
@@ -112,6 +116,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+// delete post by id
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
