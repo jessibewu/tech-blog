@@ -7,7 +7,7 @@ async function deleteCommentHandler(event) {
     window.location.toString().split('/').length - 1
   ];
 
-  console.log("comment, id");
+  console.log("comment, comment_id");
 
   const response = await fetch(`/api/comments/${comment_id}`, {
     method: 'DELETE'
@@ -19,6 +19,5 @@ async function deleteCommentHandler(event) {
     alert(response.statusText);
   }
 }
-
 
 document.querySelector('.delete-comment-btn').addEventListener('click', deleteCommentHandler);

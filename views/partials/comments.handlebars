@@ -6,7 +6,7 @@
     </div>
     <div class="text">
     <input name="comment" type="text" data-id="{{id}}" value="{{comment_text}}" />
-    <button type="submit">Edit</button>
+    <button type="button" class="edit-comment-btn">Edit</button>
     <button type="button" class="delete-comment-btn">Delete</button>
 
     </div>
@@ -14,4 +14,5 @@
   {{/each}}
 </div>
 
+<script src="/javascript/edit-comment.js"></script>
 <script src="/javascript/delete-comment.js"></script>
