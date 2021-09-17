@@ -1,5 +1,5 @@
 async function deleteCommentHandler(event) {
- event.preventDefault();
+event.preventDefault();
 
   const comment = document.querySelector('input[name="comment"]');
   const comment_id = comment.getAttribute('data-id');
@@ -20,4 +20,8 @@ async function deleteCommentHandler(event) {
   }
 }
 
-document.querySelector('.delete-comment-btn').addEventListener('click', deleteCommentHandler);
+const btns = document.getElementsByClassName("delete-comment-btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", this.deleteCommentHandler.bind(this)) 
+    };
+  

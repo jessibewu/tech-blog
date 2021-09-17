@@ -1,11 +1,13 @@
 {
   "name": "14.-tech-blog",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.17.4"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "seed": "node seeds/index.js",
     "start": "node server.js"
   },
   "repository": {
