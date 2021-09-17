@@ -1,15 +1,16 @@
 async function deleteCommentHandler(event) {
 event.preventDefault();
 
-  const comment = document.querySelector('input[name="comment"]');
-  const comment_id = comment.getAttribute('data-id');
+  const deleteBtnID = event.target.getAttribute('data-id');
+  const comment_content = document.querySelector('[data-id="' + deleteBtnID + '"]').value;
+
   const post_id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  console.log("comment, comment_id");
+  console.log(comment_content, deleteBtnID);
 
-  const response = await fetch(`/api/comments/${comment_id}`, {
+  const response = await fetch(`/api/comments/${deleteBtnID}`, {
     method: 'DELETE'
   });
 
@@ -20,8 +21,8 @@ event.preventDefault();
   }
 }
 
-const btns = document.getElementsByClassName("delete-comment-btn");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", this.deleteCommentHandler.bind(this)) 
+const deleteBtn = document.getElementsByClassName("delete-comment-btn");
+    for (var i = 0; i < deleteBtn.length; i++) {
+      deleteBtn[i].addEventListener("click", deleteCommentHandler) 
     };
   

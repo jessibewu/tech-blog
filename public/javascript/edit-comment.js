@@ -1,18 +1,16 @@
 async function editCommentHandler(event) {
   event.preventDefault();
-  
-  const comment_content = document.querySelector('input[name="comment"]').value;
 
-  const comment = document.querySelector('input[name="comment"]');
-  const comment_id = comment.getAttribute('data-id');
+  const btnID = event.target.getAttribute('data-id');
+  const comment_content = document.querySelector('[data-id="' + btnID + '"]').value;
 
-  // const post_id = window.location.toString().split('/')[
-  //     window.location.toString().split('/').length - 1
-  //   ];
+  const post_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
-  console.log(comment_content, comment, comment_id);
+  console.log(comment_content, btnID);
 
-  const response = await fetch(`/api/comments/${comment_id}`, {
+  const response = await fetch(`/api/comments/${btnID}`, {
       method: 'PUT',
       body: JSON.stringify({
         "comment_text": comment_content
@@ -24,7 +22,7 @@ async function editCommentHandler(event) {
   
     
     if (response.ok) {
-     // document.location.replace(`/dashboard/edit/${post_id}`);
+     document.location.replace(`/dashboard/edit/${post_id}`);
      console.log(response);
     } else {
       alert(response.statusText);
@@ -36,4 +34,3 @@ const editCommentBtns = document.getElementsByClassName("edit-comment-btn");
       editCommentBtns[i].addEventListener("click", editCommentHandler) 
     };
 
-//document.querySelector('.edit-comment-btn').addEventListener('click', editCommentHandler);
