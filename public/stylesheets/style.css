@@ -1,3 +1,5 @@
+/* main body styling */
+
 * {
   box-sizing: border-box;
   text-align: center;
@@ -25,52 +27,6 @@ a:hover {
 h2 a:hover {
   color: #3486eb;
   text-decoration: none;
-}
-
-button {
-  background-color: #6a40ad;
-  border: 0;
-  color: white;
-  font-weight: bold;
-  transition: background-color .1s;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #3486eb;
-}
-
-.your-post-margin {
-  margin-left: 14px;
-}
-
-.post-list {
-  margin: 0;
-  padding: 0;
-}
-
-textarea, .textarea, input {
-  padding: .5%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  min-width: 100%;
-}
-
-.textarea {
-  width: 300px;
-  height:100px;
-  word-break: break-word;
-}
-
-textarea:focus, input:focus {
-  outline: none;
-  border: 1px solid #3486eb;
-}
-
-textarea {
-  min-width: 40%;
-  min-height: 100px;
 }
 
 form > div {
@@ -103,32 +59,42 @@ main {
   padding: 2% 4%;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
+textarea, .textarea, .mb-3 {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid rgb(197, 188, 188);
+  min-width: 100%;
+}
+
+.textarea {
+  height:100px;
+}
+
+input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid rgb(197, 188, 188);
+  min-width: 100%;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+.login, .signup {
+  min-width: 50%;
+}
+
+/* post styling */
+
+.your-post-margin {
+  margin-left: 14px;
+}
+
+.post-list {
+  margin: 0;
   padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color .1s;
-  margin-left: 16px;
-}
-
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
-}
-
-.delete-post-btn, 
-.delete-comment-btn {
-  background-color: #d41414;
-}
-
-.delete-post-btn:hover,
-.delete-comment-btn:hover {
-  background-color: #ff643d;
 }
 
 .post {
@@ -147,6 +113,16 @@ main {
   margin: -1.5% 0 2% 0;
 }
 
+.new-post-form input {
+  width: 300px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+/* comment styling */
+
 .comment-form {
   margin-bottom: 5%;
 }
@@ -157,7 +133,7 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #fbfafc;
 }
 
 .comment .meta {
@@ -166,13 +142,79 @@ main {
   opacity: .6;
 }
 
-.new-post-form input {
-  width: 300px;
+.border {
+  border: transparent;
 }
 
-.edit-post-form {
-  margin-bottom: 5%;
+.border:focus {
+  color: #3f3e41;
+  background-color: rgb(234, 223, 240);
+
 }
+
+/* btn styling */
+
+button {
+  background-color: #6a40ad;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #225ca3;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color .1s;
+  margin-left: 16px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #3486eb;
+}
+
+.delete-post-btn {
+  background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
+
+.edit-comment-btn {
+  background-color: transparent;
+  color: #3486eb;
+}
+
+.edit-comment-btn:hover {
+  background-color: #3486eb;
+  color: #ffffff;
+}
+
+.delete-comment-btn {
+  background-color: transparent;
+  color: #ff643d;
+}
+
+.delete-comment-btn:hover {
+  background-color: #ff643d;
+  color: #ffffff;
+}
+
+/* footer */
 
 footer {
   border-top: 1px solid #a93cc4;
