@@ -1,16 +1,16 @@
 <article>
   <form class="edit-post-form">
     <div>
-      <h3>
+      <h5 class="text-secondary font-weight-bold">
       Title
-      </h3>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      </h5>   
     </div>
     <div>
-      <h3>
-      Content
-      </h3>
-      <input name="post-content" type="text" value="{{post.post_content}}" />
+    <input class="mb-3" name="post-title" type="text" value="{{post.title}}" />    
+      <h5 class="text-secondary font-weight-bold">
+        Content
+      </h5>
+    <input class="textarea" name="post-content" type="text" value="{{post.post_content}}" />
     </div>
     <div>
       by you on {{format_date post.created_at}}
@@ -33,10 +33,6 @@
 </form>
 
 {{> comments post.comments}}
-
-<div>
-<a href="/dashboard"> Return to dashboard</a>
-</div>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

@@ -32,7 +32,7 @@ router.put('/:id', withAuth, (req, res) => {
   Comment.update(
     {
       comment_text: req.body.comment_text,
-      //user_id: req.session.user_id,
+      user_id: req.session.user_id,
       //post_id: req.body.post_id
     },
     {
@@ -58,7 +58,8 @@ router.put('/:id', withAuth, (req, res) => {
 router.delete('/:id', withAuth, (req, res) => {
   Comment.destroy({
     where: {
-      id: req.params.id
+      id: req.params.id,
+      user_id: req.session.user_id,
     }
   })
     .then(dbCommentData => {
