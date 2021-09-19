@@ -95,7 +95,7 @@ router.get('/post/:id', (req, res) => {
       }
       // serialize the data
       const post = dbPostData.get({ plain: true });
-
+      console.log(req.session.loggedIn);
       // pass data to template
       res.render('single-post', {
         post,
