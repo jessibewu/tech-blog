@@ -10,8 +10,9 @@ This is to build a CMS-style blog site similar to a Wordpress site, where develo
   - [Usage](#usage)
   - [License](#license)
   - [Credits](#credits)
+  
   ## Installation
-  `npm init` then `npm install` the following: 
+  `npm install` the following: 
   - bcrypt 
   - connect-session-sequelize 
   - dotenv 
@@ -19,7 +20,7 @@ This is to build a CMS-style blog site similar to a Wordpress site, where develo
   - express-handlebars 
   - express-session 
   - mysql2 
-  - sequelize`
+  - sequelize
 
   ## Usage
   Deployed site: https://fierce-meadow-83766.herokuapp.com/
