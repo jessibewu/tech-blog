@@ -21,6 +21,8 @@ This is to build a CMS-style blog site similar to a Wordpress site, where develo
 
   ![alt text](./src/screenshot.png) 
   
+  Deployed site: https://fierce-meadow-83766.herokuapp.com/
+
   ## License
   This application is covered by [MIT](https://opensource.org/licenses/MIT) license. 
   
