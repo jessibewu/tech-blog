@@ -11,18 +11,23 @@ This is to build a CMS-style blog site similar to a Wordpress site, where develo
   - [License](#license)
   - [Credits](#credits)
   ## Installation
-  `npm init`
-  `npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session mysql2 sequelize`
+  `npm init` then `npm install` the following: 
+  - bcrypt 
+  - connect-session-sequelize 
+  - dotenv 
+  - express 
+  - express-handlebars 
+  - express-session 
+  - mysql2 
+  - sequelize`
 
   ## Usage
-  Run `node server.js` or `npm start` command at the root of the file to connect to the MySQL database on server start.
-
+  Deployed site: https://fierce-meadow-83766.herokuapp.com/
+  
   Below is a screenshot of the application: 
 
   ![alt text](./src/screenshot.png) 
   
-  Deployed site: https://fierce-meadow-83766.herokuapp.com/
-
   ## License
   This application is covered by [MIT](https://opensource.org/licenses/MIT) license. 
   
